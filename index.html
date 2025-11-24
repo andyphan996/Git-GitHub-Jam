@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git & GitHub Study Jam - HCMUTE DSC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src= "image/logo_clb.jpg" alt="Logo">
+                <span class="logo-text">HCMUTE <span class="highlight">DSC</span></span>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="#" class="nav-link active" onclick="switchTab('home', this)"><i class="fas fa-home"></i> Trang chủ</a></li>
+                    <li><a href="#" class="nav-link" onclick="switchTab('about', this)"><i class="fas fa-users"></i> Về chúng tôi</a></li>
+                    <li><a href="#" class="nav-link" onclick="switchTab('contact', this)"><i class="fas fa-envelope"></i> Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+
+    <main>
+        <section id="home" class="tab-content active fade-in">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="title-gradient">Git & GitHub Study Jam</h1>
+                    <h2 class="subtitle-main">HCMUTE-DSC 2025</h2>
+                    <p class="description-text">Khởi đầu hành trình mã nguồn mở của bạn</p>
+                </div>
+
+                <div class="card-body">
+                    <div class="image-frame">
+                        <img src="https://via.placeholder.com/800x450/f0f2f5/333333?text=Upload+Anh+Nhom+Tai+Day" alt="Ảnh Nhóm">
+                    </div>
+                    
+                    <div class="group-details">
+                        <h2 class="group-name"><i class="fas fa-code-branch"></i> Nhóm : CLOUDFLARE</h2>
+                        <p class="slogan">"Code like a pro, Commit like a hero"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="tab-content fade-in">
+            <div class="card placeholder-card">
+                <div class="icon-box clr-blue">
+                    <i class="fas fa-user-astronaut"></i>
+                </div>
+                <h2>Về Chúng Tôi</h2>
+                <p>Thông tin chi tiết về các thành viên và sứ mệnh của nhóm sẽ sớm được cập nhật tại đây.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="tab-content fade-in">
+            <div class="card placeholder-card">
+                <div class="icon-box clr-green">
+                    <i class="fas fa-paper-plane"></i>
+                </div>
+                <h2>Liên Hệ</h2>
+                <p>Kết nối với chúng tôi qua Email hoặc Form đăng ký sắp ra mắt.</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function switchTab(tabId, element) {
+            // 1. Xử lý nội dung
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+                // Reset animation bằng cách xóa và thêm lại class nếu cần, 
+                // ở đây CSS animation sẽ tự chạy khi có display: block
+            });
+
+            // 2. Xử lý menu
+            const links = document.querySelectorAll('.nav-link');
+            links.forEach(link => link.classList.remove('active'));
+
+            // 3. Kích hoạt tab mới
+            document.getElementById(tabId).classList.add('active');
+            element.classList.add('active');
+        }
+    </script>
+</body>
+</html>
